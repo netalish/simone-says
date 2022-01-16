@@ -1,8 +1,12 @@
-import logo from "./logo.svg";
-import "./App.css";
+import "./App.scss";
+import SimoneSays from "./components/SimoneSays";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <SimoneSays></SimoneSays>
+    </div>
+  );
 }
 
 export default App;
