@@ -1,3 +1,4 @@
+import * as React from "react";
 import "./App.scss";
 import SimoneSays from "./components/SimoneSays";
 
