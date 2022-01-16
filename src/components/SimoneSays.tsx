@@ -1,5 +1,6 @@
 import ColorCard from "./ColorCard";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import * as React from "react";
 import GameButton from "./GameButton";
 import timeout from "../utils/utils";
 
@@ -8,10 +9,10 @@ function SimoneSays() {
   const colorList = ["green", "red", "blue", "yellow"];
   const initPlay = {
     isDisplay: false,
-    colors: [],
+    colors: [] as string[],
     score: 0,
     userPlay: false,
-    userColors: [],
+    userColors: [] as string[],
   };
   const [isOn, setIsOn] = useState(false);
   const [play, setPlay] = useState(initPlay);
@@ -19,7 +20,6 @@ function SimoneSays() {
   useEffect(() => {
     if (isOn) {
       setPlay({ ...initPlay, isDisplay: true });
-      //console.log("isOn", isOn);
     } else {
       setPlay(initPlay);
     }
@@ -28,7 +28,6 @@ function SimoneSays() {
   useEffect(() => {
     if (isOn && play.isDisplay) {
       let newColor = colorList[Math.floor(Math.random() * 4)];
-      console.log(newColor);
       const copyColors = [...play.colors];
       copyColors.push(newColor);
       setPlay({ ...play, colors: copyColors });
@@ -42,7 +41,6 @@ function SimoneSays() {
   }, [isOn, play.isDisplay, play.colors.length]);
 
   async function flashColors() {
-    console.log("play colors", play.colors);
     await timeout(1000);
     const len = play.colors.length;
     for (let i = 0; i < len; i++) {
@@ -68,7 +66,7 @@ function SimoneSays() {
     setIsOn(true);
   }
 
-  async function cardClickHandle(color) {
+  async function cardClickHandle(color: string) {
     if (!play.isDisplay && play.userPlay) {
       const copyUserColors = [...play.userColors];
       const lastColor = copyUserColors.pop();
@@ -120,7 +118,7 @@ function SimoneSays() {
         showStartButton={!isOn && !play.score}
         showScore={isOn && (play.isDisplay || play.userPlay)}
         score={play.score}
-        gameLost={isOn && !play.isDisplay && !play.userPlay && play.score}
+        gameLost={isOn && !play.isDisplay && !play.userPlay && !!play.score}
         onStartClick={startHandle}
         OnCloseClick={closeHandle}
       ></GameButton>

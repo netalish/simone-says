@@ -1,3 +1,13 @@
+import * as React from "react";
+
+interface props {
+  showStartButton: boolean;
+  showScore: boolean;
+  score: number;
+  gameLost: boolean;
+  onStartClick: () => void;
+  OnCloseClick: () => void;
+}
 function GameButton({
   showStartButton,
   showScore,
@@ -5,7 +15,7 @@ function GameButton({
   gameLost,
   onStartClick,
   OnCloseClick,
-}) {
+}: props) {
   return (
     <div className="gameButtonWrapper">
       {showStartButton && (
