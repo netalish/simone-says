@@ -98,6 +98,10 @@ function SimoneSays() {
     }
   }
 
+  function closeHandle() {
+    setIsOn(false);
+  }
+
   return (
     <div className="gameWrapper">
       <div className="cardWrapper">
@@ -116,7 +120,9 @@ function SimoneSays() {
         showStartButton={!isOn && !play.score}
         showScore={isOn && (play.isDisplay || play.userPlay)}
         score={play.score}
+        gameLost={isOn && !play.isDisplay && !play.userPlay && play.score}
         onStartClick={startHandle}
+        OnCloseClick={closeHandle}
       ></GameButton>
     </div>
   );

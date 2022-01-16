@@ -45,6 +45,20 @@
   border: black;
 }
 
+.lost {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background-color: black;
+  border-radius: 50%;
+  line-height: 100px;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .score {
   position: absolute;
   width: 100px;

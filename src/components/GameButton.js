@@ -1,4 +1,11 @@
-function GameButton({ showStartButton, showScore, score, onStartClick }) {
+function GameButton({
+  showStartButton,
+  showScore,
+  score,
+  gameLost,
+  onStartClick,
+  OnCloseClick,
+}) {
   return (
     <div className="gameButtonWrapper">
       {showStartButton && (
@@ -7,6 +14,12 @@ function GameButton({ showStartButton, showScore, score, onStartClick }) {
         </button>
       )}
       {showScore && <div className="score">{score}</div>}
+      {gameLost && (
+        <div className="lost">
+          <div>Final score: {score}</div>
+          <button onClick={OnCloseClick}>Close</button>
+        </div>
+      )}
     </div>
   );
 }
