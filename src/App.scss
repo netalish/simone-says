@@ -3,6 +3,7 @@
   //justify-content: center;
   //align-items: center;
   //text-align: center;
+  text-align: center;
 }
 
 .gameWrapper {
@@ -27,9 +28,31 @@
   width: 200px;
 }
 
+.gameButtonWrapper {
+  display: contents;
+}
+
 .gameButton {
   position: absolute;
   width: 100px;
+  padding: 20px;
+  background-color: black;
+  border-radius: 50%;
+  color: white;
+  height: 100px;
+  font-size: 25px;
+  line-height: 50px;
+  border: black;
+}
+
+.score {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  border-radius: 50%;
+  line-height: 100px;
+  font-size: 50px;
 }
 
 .flash {

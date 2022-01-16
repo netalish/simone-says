@@ -1,8 +1,13 @@
-function GameButton({ isOn, onClick }) {
+function GameButton({ showStartButton, showScore, score, onStartClick }) {
   return (
-    <button onClick={onClick} className="gameButton">
-      Start
-    </button>
+    <div className="gameButtonWrapper">
+      {showStartButton && (
+        <button onClick={onStartClick} className="gameButton">
+          Start
+        </button>
+      )}
+      {showScore && <div className="score">{score}</div>}
+    </div>
   );
 }
 
