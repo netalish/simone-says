@@ -55,21 +55,36 @@
   font-size: 50px;
 }
 
-.flash {
+.flash.flash {
+  border: 5px solid white;
+  box-sizing: border-box;
+  border-radius: 5px;
 }
 
 .red {
   background-color: red;
+  &.flash {
+    background-color: rgb(255, 125, 125);
+  }
 }
 
 .blue {
   background-color: blue;
+  &.flash {
+    background-color: rgb(50, 125, 255);
+  }
 }
 
 .green {
   background-color: green;
+  &.flash {
+    background-color: rgb(125, 255, 125);
+  }
 }
 
 .yellow {
   background-color: yellow;
+  &.flash {
+    background-color: rgb(255, 255, 125);
+  }
 }
